@@ -1,0 +1,135 @@
+---
+title: "MTH6139 Time Series" 
+subtitle: "Coursework 1 -- Template" 
+author: "Your name and surname" 
+date: "Spring term 2025" 
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: spacelab 
+    highlight: tango
+---
+ 
+```{r, echo=FALSE}
+# This code will display the QMUL logo at the top right of the page
+# Do not change this code
+htmltools::img(src = knitr::image_uri("images/QMlogo.png"),
+               alt = 'logo',
+               style = 'position:absolute; top:0; right:0; padding:10px; width:20%;')
+```
+
+# Section 1: This is the first section
+This is a template for your weekly work. You can write text, include images, write equations, and include R code. The text below is provided just for demonstration, you can save it elsewhere and replace by your work.
+
+> <font size="5">💡</font> **Tip**
+> 
+> 1. You can rename the files in the project to something like `TimeSeriesWeek1.R` and `TimeSeriesWeek1.Rmd` and keep them in the `TimeSeriesWork` project folder.
+> Or
+> 2. You can also rename the folder to `TimeSeriesWeek1` and the project file to 
+`TimeSeriesWeek1.Rproj` and keep one folder for each week
+>
+> <font size="5">⚠️</font> **Warning** Do not use spaces in file names or folder names. They might not cause problems today, but will some time in the future.
+
+## 1.1 The first subsection
+**There needs to be an empty line before a line starting with `#` or `##` otherwise section headings will not display properly.**
+
+## 1.2 The second  subsection
+You can write R code inline as follows `{r}x <- 1:10`. This is called *inline code*. You can also write code in a separate block as follows:
+
+```{r}
+# ENSO is a time series related to the 
+# El Nino effect weather pattern in the South Pacific
+# run ?astsa::ENSO for more information
+library(astsa)
+start(ENSO)
+end(ENSO)
+frequency(ENSO)
+```
+This is called a *code chunk*.
+
+If you want to hide the code, just add `echo=FALSE` in the chunk options.
+```{r echo=FALSE}
+library(astsa)
+start(ENSO)
+end(ENSO)
+frequency(ENSO)
+```
+
+## 1.3 Writing text
+Text is written using the *markdown* syntax. Just Google this around. It is basically plain text but with some extras to make it look nice. 
+
+- Sections start with a hash character `#`. 
+- Subsections start with two hash characters `##`.
+- etc.
+- Boldface text is written with two asterisks `**like this**`.
+- Italics text is written with one asterisk `*like this*`.
+- Code is written in between  back-ticks \`like this\`.
+- Codeblocks in R are written as 
+
+\`\`\`{r}
+
+code here
+
+\`\`\`
+  
+## 1.4 Callout blocks
+
+> <font size="5">📘</font> **Callout blocks**
+> 
+> You can typeset callout blocks 
+> by writing text after the `>` character. 
+> 
+> You can also add emojis to make it look nice.
+
+> <font size="5">⚠️</font> **Important**
+> 
+> Your RMarkdown file should not include R instructions such as:
+>
+> - `install.packages("...")`, or
+> - `help(...)` or `?...`,
+> - `data()` or `data(package="...")`,
+> - `View(...)`,
+> - Or any other instruction that displays data in a separate window or requires user input.
+> 
+> as they are not suitable for an HTML document.
+> 
+> Run them in the console as part of your development. But not in the RMarkdown document.
+
+# Section 2: This is the second section
+
+## 2.1 Including image files
+You can include images with `![](images/QMlogo.png)`
+
+![](images/QMlogo.png)
+
+
+## 2.2 Including hyperlinks
+You can write an URL by surrounding it by `<` and `>`, this will render like this: <https://www.qmul.ac.uk>
+
+You can also hyperlink text to a URL using `[text](url)`. 
+For example:  `[Click here to go to the QMUL website](https://www.qmul.ac.uk)` results in 
+
+
+[Click here to go to the QMUL website](https://www.qmul.ac.uk)
+
+
+## 2.2 Displaying plots
+You can also display plots. For example, the code below will display a plot of the ENSO data.
+```{r}
+plot(ENSO)
+```
+
+## 2.3 Writing equations
+In the course we will not use this much, but in case you want, you can also write equations using $\LaTeX$. For example, the equation of a straight line is $y = mx + b$.
+$$
+z=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}
+$$
+etc.
+
+
+# References
+
+- Datacamp course: <https://www.datacamp.com/courses/reporting-with-rmarkdown>
+- RStudio reference: <https://rmarkdown.rstudio.com/lesson-1.html>
+- More sophisticated reference: <https://bookdown.org/yihui/rmarkdown/>
